@@ -1,0 +1,112 @@
+.swiper-container img {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+.cp-name{
+    font-size: 0.75rem;
+    color: #000;
+    font-weight: normal;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.fx-fl1{
+    text-align: center;
+}
+.fx-fl1-img{
+    width: 50%;
+}
+.cash-numb{
+    font-weight:normal;
+    font-size: 0.75rem;
+
+}
+.fx-bgcolor{
+    background-color: #eee;
+    height: 10px;
+}
+.fx-fl1-cash{
+    color: #db0f10;
+    font-size: 0.65rem;
+}
+.fx-cp-name{
+    font-size: 0.8rem;
+    color: #000;
+    line-height: 1.2rem;
+}
+.fx-cp-stores{
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+.fx-col-l-area ul{
+    overflow: hidden;
+    padding: 0 0.5%;
+}
+.fx-col-l-area ul li{
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.fx-col-l-area ul li img{
+    width: 35px;
+    height: 35px;
+}
+.fx-col-l-area ul li p{
+    color: #b5b5b5;
+    font-size: 0.7rem;
+}
+.fx-main-box{
+    padding: 5px 20px;
+}
+.fx-box-title{
+    font-size: 0.6rem;
+    color: #db0f10;
+    margin-bottom: 20px;
+}
+.fx-user-title{
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: normal;
+}
+.fx-col-l-area{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.fx-col-l p{
+    color: #555;
+    font-size: 0.6rem;
+    line-height: 1.2rem;
+}
+.fx-col-active{
+    border: 1px solid #d02c51 !important;
+}
+.cash-deposit{
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+}
+.cash-col{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 1.2rem;
+    background-color: #d02c51;
+    color: #fff;
+}
+.cash-col-btn{
+    padding: 5px 0px;
+    font-size: 0.85rem;
+    line-height: 1rem;
+}
+.cash-col-t{
+    font-size: 0.6rem;
+    line-height: 1rem;
+}
