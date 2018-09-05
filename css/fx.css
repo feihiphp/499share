@@ -1,6 +1,6 @@
 .swiper-container img {
     display: block;
-    width: 100%;
+    width: 100px;
     height: 100px;
 }
 .cp-name{
@@ -109,4 +109,72 @@
 .cash-col-t{
     font-size: 0.6rem;
     line-height: 1rem;
+}
+
+
+
+/* 弹出框css */
+.m-endbargain{
+	position: fixed;
+	top: 30%;
+	z-index: 1500;
+	width: 80%;
+	margin: 0 10%;
+	border-radius: 5px;
+	background-color: #fff;
+}
+#BgDiv3 {
+    background-color: #000;
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6 !important;
+    filter: alpha(opacity=60);
+}
+.m-end-title{
+    font-size: 1rem;
+    text-align: center;
+    font-weight: normal;
+    color: #000;
+}
+.m-end-main{
+    padding: 0.25rem 1.75rem;
+}
+.m-end-sm{
+    font-size: 0.8rem;
+    text-align: center;
+}
+.m-end-tximg{
+    width: 80px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.m-end-btn{
+    overflow: hidden;
+    margin-top: 2rem;
+    margin-bottom: 20px;
+}
+.m-btn-ensure{
+    float: left;
+    color: #fff;
+    width: 70px;
+    text-align: center;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    background-color: #1196db;
+}
+.m-btn-cancel{
+    float: right;
+    background-color: #9abac9;
+    color: #fff;
+    width: 70px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 0.7rem;
 }

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" id="viewport" content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title>分享者</title>
 <link rel="stylesheet" type="text/css" href="css/example.css">
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/weui.min.css">
 <link rel="stylesheet" href="css/fx.css">
 <link rel="stylesheet" href="css/swiper.min.css">
-<link rel="stylesheet" href="css/jq-weui.css">
+<!-- <link rel="stylesheet" href="css/jq-weui.css"> -->
 <style>
 body {
       background: #eee;
@@ -20,24 +20,23 @@ body {
       color:#000;
       margin: 0;
       padding: 0;
-    }
-    .swiper-container {
-      width: 100%;
-	  margin: 20px auto;
 	}
+	.swiper-container {
+      width: 100%;
+      margin: 20px auto;
+    }
     .swiper-slide {
       text-align: center;
-	  font-size: 18px;
-	  background: #fff;
+      font-size: 18px;
+      background: #fff;
 	  border: 1px solid #ccc;
 	  border-radius: 5px;
 	  padding: 10px;
-	  width: 80px !important;
       /* Center slide text vertically */
       display: -webkit-box;
       display: -ms-flexbox;
       display: -webkit-flex;
-	  display: flex;
+      display: flex;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       -webkit-justify-content: center;
@@ -46,7 +45,8 @@ body {
       -ms-flex-align: center;
       -webkit-align-items: center;
       align-items: center;
-	}
+    }
+    
 </style>
 </head>
 <body>
@@ -66,12 +66,13 @@ body {
 						<div class="fx-bgcolor"></div>
 						<div class="fx-content">
                                 <!-- Swiper -->
-                                <div class="swiper-container">
-                                    <div class="swiper-wrapper">
-										
-									</div>
-                                    
-								</div>
+                           <div class="swiper-container swiper-container-virtual swiper-container-horizontal">
+								<div class="swiper-wrapper"></div>
+								<!-- Add Pagination -->
+								<!-- <div class="swiper-pagination"></div> -->
+								
+                        </div>
+                        
 								<!-- 产品显示 -->
 								<div class="fx-fl1">
 									<img class="fx-fl1-img" src="img/0.png" alt="">
@@ -133,14 +134,8 @@ body {
 
 											</p>
 									</div>
-
-									
-
 								</div>
-
-
 								<!-- 图文展示结束 -->
-								
 						</div>
 		        <!-- 缴纳保证金按钮 -->
 									<div class="cash-deposit">
@@ -150,58 +145,58 @@ body {
 										</div>
 									</div>
 		        </div>
-		        
 			</div>
 		</div>
-		
 	</div>
 </div>
-
 <script src="js/fastClick.js"></script>
-<script src="js/jquery-2.1.4.js"></script>
 <script src="js/swiper.min.js"></script>
+<script src="js/jquery-2.1.4.js"></script>
 <script>
-		var swiper = new Swiper('.swiper-container', {
-		  slidesPerView: 4,//显示个数数量
-		  centeredSlides: true,
-		  spaceBetween: 8,
-		  slidesOffsetBefore:-100,
-		  pagination: {
-			el: '.swiper-pagination',
-			type: 'fraction',
-		  },
-		  navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		  },
-		  virtual: {
-			slides: (function () {
-			  var slides = [];
-			  for (var i = 0; i < 4; i += 1) {
-				slides.push('<div class="cp-co1"><img class="cp-img" src="img/'+i+'.png" alt="">'+'<p class="cp-name">'+i+'多功能单层自热饭盒</p></div>');
-			  }
-			  return slides;
-			}()),
-		  },
-		});
-		
-	  </script>
-<script>
-	
+	var mySwiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      centeredSlides: true,
+      spaceBetween: 30,
+	  width:18*20,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+	  onSlideChangeEnd:function(swiper){ alert(swiper.activeIndex); },
+      virtual: {
+        slides: (function () {
+          var slides = [];
+          for (var i = 0; i < 20; i += 1) {
+            slides.push('<div class="cp-co1"><img class="cp-img" src="img/'+i+'.png" alt="">'+'<p class="cp-name">'+i+'多功能单层自热饭盒</p></div>');
+          }
+          return slides;
+        }()),
+      },
+	  
+    });
+//点击每个产品
  $(".swiper-slide").click(function () {
-	//  console.log($(this).html());
+	 console.log($(this).html()); //点击处的内容
 	 $(this).addClass("fx-col-active").siblings().removeClass("fx-col-active");
 	 var cPimg=$(this).find(".cp-img").attr('src');
 	 var cPname=$(this).find(".cp-name").html();
-	//  console.log(cPimg);
-	//  console.log(cPname);
+	 console.log(cPimg);  //获取图片的路径
+	 console.log(cPname); // 获取商品名称
 	 $(".fx-fl1-img").attr("src",cPimg);
 	 $(".cash-col-cpname").html(cPname);
-
  })
- $(".swiper-slide:first").addClass("fx-col-active");
+</script>
+<script>
+//第一个产品区域添加样式
+$(".swiper-slide:first").addClass("fx-col-active");
  var firstname=$(".swiper-slide:first").find(".cp-name").html();
  $(".cash-col-cpname").html(firstname);
+
+
 </script>
 </body>
 </html>
