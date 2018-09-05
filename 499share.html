@@ -166,7 +166,6 @@ body {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-	  onSlideChangeEnd:function(swiper){ alert(swiper.activeIndex); },
       virtual: {
         slides: (function () {
           var slides = [];
@@ -179,7 +178,7 @@ body {
 	  
     });
 //点击每个产品
- $(".swiper-slide").click(function () {
+ $(document).on('click',".swiper-slide",function () {
 	 console.log($(this).html()); //点击处的内容
 	 $(this).addClass("fx-col-active").siblings().removeClass("fx-col-active");
 	 var cPimg=$(this).find(".cp-img").attr('src');
